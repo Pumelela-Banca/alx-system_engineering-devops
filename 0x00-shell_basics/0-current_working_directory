@@ -1,4 +1,0 @@
-#!/bin/bash
-cat << _EOF_
-pwd
-_EOF_
