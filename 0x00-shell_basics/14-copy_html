@@ -1,6 +1,2 @@
-#!/bin/bash
-for item in $(*.html); do
-    case $item in
-    $(ls /  ) ) cp $item / ;;
-esac
-;done
+#!/bin/bash 
+for item in $(*.html); do case $item in $(ls /  ) ) cp $item / ;; esac ;done
