@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod --recursive +x .
+sudo chmod -R +X . .
