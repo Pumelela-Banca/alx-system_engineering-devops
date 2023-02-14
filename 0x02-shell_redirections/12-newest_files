@@ -1,0 +1,2 @@
+#!/bin/bash
+find / -type f -printf "\n%AT %p" | head -n 10 | basename -a
