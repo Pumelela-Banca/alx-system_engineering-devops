@@ -1,2 +1,7 @@
 #!/usr/bin/env bash
 #a loop of a string in 2 sec intervals
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 5
+done
