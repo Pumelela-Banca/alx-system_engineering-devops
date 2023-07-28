@@ -1,21 +1,18 @@
 #!/usr/bin/env bash
-#prints 1-20 with words at some places
+#prints name at intervals
 
 i=1
-italy="bad luck from China"
-jap="bad luck from Japan"
-cn="bad luck from Italy"
 
 while [ $i -le 20 ]; do
 	if [ $i -eq 4 ]; then
 		echo $i
-		echo $italy
+		echo "bad luck from China"
 	elif [ $i -eq 9 ]; then
 		echo $i
-		echo $jap
+		echo "bad luck from Japan"
 	elif [ $i -eq 17 ]; then
 		echo $i
-		echo $cn
+		echo "bad luck from Italy"
 	else
 		echo $i
 	fi
