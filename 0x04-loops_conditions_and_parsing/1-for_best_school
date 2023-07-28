@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # displays best school 10 times
+
 MAX=10
 for ((i = 0; i < MAX; i++)); do
 	echo "Best School"

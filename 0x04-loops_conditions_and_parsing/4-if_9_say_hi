@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#prints 9 times and on ten also print hi
+
+name
