@@ -4,7 +4,7 @@
 i=1
 italy="bad luck from China"
 jap="bad luck from Japan"
-cn="bad luck from Japan"
+cn="bad luck from Italy"
 
 while [ $i -le 20 ]; do
 	if [ $i -eq 4 ]; then
