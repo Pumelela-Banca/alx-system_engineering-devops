@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
 #a loop of string until its killed
+pkill -f 7-highlander
