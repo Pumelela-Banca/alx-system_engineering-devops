@@ -2,5 +2,5 @@
 #prints file names in curdir
 
 for i in $(ls); do
-	echo $i | cut -d '_' -f 1
+	echo $i | cut -d '-' -f 2
 done
