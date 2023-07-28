@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 #kills previous process
-killall 4-to_infinity_and_beyond
+killall -s SIGKILL 4-to_infinity_and_beyond
