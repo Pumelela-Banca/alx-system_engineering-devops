@@ -3,13 +3,13 @@
 
 min=1
 hour=0
-echo "Hour: $hour" 
-while [ $hour -le 11 ]; do
+echo "Hour: $($hour)" 
+while [[ $(hour) -le 11 ]]; do
 	echo $min
-	let min++
-	if [ $min -eq 60 ]; then
+	((min++))
+	if [[ $min -eq 60 ]]; then
 		min=1
-		let hour++
+		((hour++))
 		echo "Hour: $hour"
 	fi
 done
