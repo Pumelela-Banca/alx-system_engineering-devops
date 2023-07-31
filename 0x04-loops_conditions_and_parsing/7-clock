@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 #print time minutes and hours
-
 min=1
 hour=0
-echo "Hour: $($hour)" 
-while [[ $(hour) -le 12 ]]; do
-	echo $min
+echo "Hour: $hour"
+while [[ $hour -le 11 ]]; do
+	echo "$min"
 	((min++))
-	if [[ $min -eq 60 ]]; then
+	if [[ "$min" -eq 60 ]]; then
 		min=1
 		((hour++))
 		echo "Hour: $hour"
