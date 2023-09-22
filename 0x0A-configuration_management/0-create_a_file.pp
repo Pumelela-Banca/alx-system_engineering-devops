@@ -1,6 +1,6 @@
 # Creates file
 
-file { 'school':
+file { '/tmp/school':
   ensure   => file,
   path     => '/tmp/school',
   conttent => 'I love Puppet',
