@@ -1,0 +1,4 @@
+# Creates file
+
+file { 'school':
+      
