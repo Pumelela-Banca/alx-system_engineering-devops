@@ -4,7 +4,7 @@
 file { 'ect/ssh/ssh_config':
   ensure  => present;
   content => "
-  host*
+  Host*
   IdentityFile ~/.ssh/school
   PasswordAuthentication no"
 }
