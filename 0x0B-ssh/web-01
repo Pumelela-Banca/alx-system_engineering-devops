@@ -1,0 +1,8 @@
+#!/user/bin/env bash
+# log in to server
+
+eval $("ssh-agent")
+
+ssh-add ~/.ssh/holla
+
+ssh ubuntu@3.85.136.90
