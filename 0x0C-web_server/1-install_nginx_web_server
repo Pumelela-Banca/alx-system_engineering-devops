@@ -11,4 +11,4 @@ ip_s=$2
 usr_name=$3
 ssh_dr=$4
 
-scp -o "StrictHostKeyChecking=no" -i "$ssh_dr" "$name_file" "$usr_name@$ip_s:~/"
+scp -o StrictHostKeyChecking=no -i "$ssh_dr" "$name_file" "$usr_name@$ip_s":~/
