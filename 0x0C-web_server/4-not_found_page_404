@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-# page not found
+# creattes error page
 
 sudo apt-get update
 sudo apt-get install -y nginx
 sudo sh -c 'echo "Hello world!" > /var/www/html/index.nginx-debian.html'
-string="server_name _;\n\trewrite ^\/redirect_me https:\\www.youtube.com/watch?v=QH2-TGUlwu4 permanent;"
+string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/Pumelela-Banca permanent;"
 sudo sed -i "s/server_name _;/$string/" /etc/nginx/sites-enabled/default
-sudo service enginx restart 
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+string2="listen 80 default_server;\n\terror_page 404 \/404.html;\n\tlocation = \/404.html {\n\t\troot \/var\/www\/html;\n\t}"
+sudo sed -i "s/listen 80 default_server;/$string2/" /etc/nginx/sites-enabled/default
+sudo service nginx restart 
