@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # start apache service
+sudo apt install apache2
 echo "ServerName localhost" >> /etc/apache2.conf
+sudo systemctl enable --now apache2
 sudo service apache2 reload
