@@ -17,10 +17,6 @@ file_line { 'write content':
   after    => 'server_name _;',
 }
 
-file { '/var/www/html/index.html':
- content   =>'Holberton School',
-}
-
 servirce { 'nginx':
   ensure => running,
 }
