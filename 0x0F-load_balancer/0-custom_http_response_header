@@ -19,4 +19,4 @@ sudo sed -i "s/listen 80 default_server;/$string2/" /etc/nginx/sites-enabled/def
 sudo sed -i "/server_name _;/a add_header X-Served-By 276515-web-01;" /etc/nginx/sites-enabled/default
 
 sudo nginx -t
-sudo service nginx restar
+sudo service nginx restart
