@@ -6,17 +6,20 @@ sudo apt-get -y update
 sudo apt-get -y install haproxy
 
 # enable
-echo 'ENABLED=1' | sudo tee /etc/default/haproxy
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
 echo "
-frontend front
-        bind *:80
+frontend http-in
+        timeout client 30000
+        bind :80
         mode http
-        default_backend back
-backend back
+        default_backend servers
+backend sservers
+        timeout connect 3000
+        timeout server 30000
         balance roundrobin
-        server 276515-web-01 52.91.160.96 check
-        server 276515-web-02 54.83.136.225 check
+        server 276515-web-01 52.91.160.96:80 check
+        server 276515-web-02 54.83.136.225:80 check
 " | sudo tee -a /etc/haproxy/haproxy.cfg
 
 service haproxy start
