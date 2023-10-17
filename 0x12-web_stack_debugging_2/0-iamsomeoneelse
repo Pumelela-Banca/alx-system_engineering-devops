@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Run commmand as different users
+su "$1" -s /bin/bash -c 'whoami'

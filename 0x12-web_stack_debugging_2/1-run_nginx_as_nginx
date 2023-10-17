@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#user nginx listens to port 80
+pkill apache2
+sed -i "s/80/8080/g" /etc/nginx/sites-available/default
+sed -i "1i user nginx;" /etc/nginx/nginx.conf
+chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
