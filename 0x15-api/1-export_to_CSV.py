@@ -29,4 +29,4 @@ if __name__ == "__main__":
             user_name = usr_name.get("username")
             completed = x.get("completed")
             title = x.get("title")
-            writer.writerow(user_id, user_name, completed, title)
+            writer.writerow([user_id, user_name, completed, title])
