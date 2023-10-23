@@ -20,8 +20,8 @@ if __name__ == "__main__":
 
     with open(f"{sys.argv[1]}.csv", 'w') as file:
         for x in tasks_td:
-            line = f'"{usr_name.get("id")}",' \
-                   f'"{usr_name.get("name")}",' \
+            line = f'"{usr_name.get("userId")}",' \
+                   f'"{usr_name.get("username")}",' \
                    f'"{x.get("completed")}",' \
                    f'"{x.get("title")}"'
             file.writelines(line + "\n")
