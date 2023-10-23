@@ -25,8 +25,9 @@ if __name__ == "__main__":
                          "USERNAME", "TASK_COMPLETED_STATUS",
                          "TASK_TITLE"])
         for x in tasks_td:
-            user_id = sys.argv[1]
-            user_name = usr_name.get("username")
-            completed = x.get("completed")
-            title = x.get("title")
+            user_id = f"{sys.argv[1]}"
+            user_name = f'{x.get("completed")}'
+            completed = f'{x.get("completed")}'
+            title = f'{x.get("title")}'
+
             writer.writerow([user_id, user_name, completed, title])
