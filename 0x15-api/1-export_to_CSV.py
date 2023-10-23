@@ -25,7 +25,7 @@ if __name__ == "__main__":
                          "USERNAME", "TASK_COMPLETED_STATUS",
                          "TASK_TITLE"])
         for x in tasks_td:
-            user_id = usr_name.get("userId")
+            user_id = sys.argv[1]
             user_name = usr_name.get("username")
             completed = x.get("completed")
             title = x.get("title")
