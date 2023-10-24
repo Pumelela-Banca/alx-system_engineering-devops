@@ -20,14 +20,19 @@ if __name__ == "__main__":
                       if task.get("completed")]
 
     with open(f"{sys.argv[1]}.csv", 'w', newline="") as file:
-        writer = csv.writer(file)
-        writer.writerow(["USER_ID",
-                         "USERNAME", "TASK_COMPLETED_STATUS",
-                         "TASK_TITLE"])
+        titles = ["USER_ID",
+                  "USERNAME", "TASK_COMPLETED_STATUS",
+                  "TASK_TITLE"]
+        all_vals = []
         for x in tasks_td:
-            user_id = f"{sys.argv[1]}"
-            user_name = f'{x.get("completed")}'
-            completed = f'{x.get("completed")}'
-            title = f'{x.get("title")}'
-
-            writer.writerow([user_id, user_name, completed, title])
+            user_id = sys.argv[1]
+            user_name = usr_name.get("username")
+            completed = x.get("completed")
+            title = x.get("title")
+            stor_dict = {titles[0]: user_id,
+                         titles[1]: user_name,
+                         titles[2]: completed,
+                         titles[3]: title}
+            all_vals.append(stor_dict)
+        writer = csv.DictWriter(file, fieldnames=titles, quoting=csv.QUOTE_ALL)
+        writer.writerows(all_vals)
