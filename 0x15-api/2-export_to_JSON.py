@@ -21,20 +21,16 @@ if __name__ == "__main__":
                       if task.get("completed")]
 
     with open(f"{sys.argv[1]}.json", 'w') as file:
-        titles = ["USER_ID",
-                  "USERNAME", "TASK_COMPLETED_STATUS",
-                  "TASK_TITLE"]
         all_vals = []
         for x in tasks_td:
-            if int(sys.argv[1]) != x.get("userID"):
+            if int(sys.argv[1]) == x.get("userID"):
                 continue
             user_id = sys.argv[1]
             user_name = usr_name.get("username")
             completed = x.get("completed")
             title = x.get("title")
-            stor_dict = {titles[0]: user_id,
-                         titles[1]: user_name,
-                         titles[2]: completed,
-                         titles[3]: title}
+            stor_dict = {"task": title,
+                         "completed": completed,
+                         "username": user_name}
             all_vals.append(stor_dict)
         json.dump({sys.argv[1]: all_vals}, file)
