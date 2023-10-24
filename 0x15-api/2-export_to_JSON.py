@@ -26,8 +26,6 @@ if __name__ == "__main__":
                   "TASK_TITLE"]
         all_vals = []
         for x in tasks_td:
-            if int(sys.argv[1]) != x.get("userID"):
-                continue
             user_id = sys.argv[1]
             user_name = usr_name.get("username")
             completed = x.get("completed")
