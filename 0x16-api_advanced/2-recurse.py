@@ -15,8 +15,7 @@ def recurse(subreddit, hot_list=[], after=""):
     titles
     """
     response = requests.get(
-        "https://www.reddit."
-        "com/r/{}/hot.json".format(subreddit),
+        f"https://www.reddit.com/r/{subreddit}/hot.json",
         headers={"User-Agent": "Custom"},
         params={"after": after},
         allow_redirects=False
