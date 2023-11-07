@@ -11,7 +11,7 @@ def top_ten(subreddit):
     """
     prints  subreddit
     """
-    url = url = f"https://www.reddit.com/r/{subreddit}/about.json"
+    url = f"https://www.reddit.com/r/{subreddit}/about.json"
     response = requests.get(
         url, headers={"User-Agent": "My-User-Agent"}, allow_redirects=False)
     if response.status_code == 200:
