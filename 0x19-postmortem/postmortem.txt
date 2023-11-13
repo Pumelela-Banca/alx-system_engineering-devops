@@ -1,0 +1,32 @@
+# Postmortem: Server Outage on November 5, 2023
+
+## Summary
+
+On November 5, 2023, at 10:15 AM GMT+02:00, our server experienced an outage that lasted for 45 minutes,
+affecting 25% of our users in the Western Cape region. The root cause of the outage was a memory leak 
+in one of our applications that consumed all the available RAM on the server, causing it to crash. 
+We resolved the issue by restarting the server and deploying a hotfix to the application. 
+We apologize for the inconvenience and frustration this incident caused to our users.
+
+## Timeline
+
+- 10:15 AM: We received an alert from our monitoring system that the server was unresponsive.
+- 10:20 AM: We logged into the server and found that it had run out of memory and was in a kernel panic state. We also noticed that one of our applications had a high memory usage and was leaking memory over time.
+- 10:25 AM: We decided to restart the server to restore its functionality and free up the memory.
+- 10:30 AM: The server was back online and serving requests. We verified that the application was still running and the memory leak was still present.
+- 10:35 AM: We identified the source of the memory leak in the application code and prepared a hotfix to patch it.
+- 10:45 AM: We deployed the hotfix to the application and confirmed that the memory leak was fixed. We monitored the server and the application for any anomalies or errors.
+- 11:00 AM: We declared the incident resolved and updated our users via email and social media.
+
+## Root Cause Analysis
+
+The root cause of the outage was a memory leak in one of our applications that consumed all the available RAM on the server, causing it to crash. The memory leak was caused by a bug in the application code that failed to release the memory allocated for a temporary buffer after processing a request. The bug was introduced in the latest version of the application that was deployed on November 4, 2023.
+
+## Corrective and Preventive Actions
+
+To prevent this incident from happening again, we have taken the following actions:
+
+- We have added more unit tests and code reviews to the application development process to catch any memory leaks or other bugs before deployment.
+- We have increased the memory capacity of the server to handle higher loads and spikes in traffic.
+- We have improved our monitoring and alerting system to detect any memory issues or performance degradation on the server and notify us promptly.
+- We have conducted a postmortem meeting with the application team and the server team to review the incident and share the lessons learned.
