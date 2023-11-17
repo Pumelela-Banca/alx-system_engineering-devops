@@ -6,6 +6,6 @@ exec { 'increase traffic':
 }
 
 exec { 'start nginx':
-  command => 'nginx start',
+  command => 'nginx restart',
   path    => '/etc/init.d',
 }
